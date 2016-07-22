@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  yearmonth: 2016-07-22
+  costtype: MyString
+  cost: 9.99
+
+two:
+  yearmonth: 2016-07-22
+  costtype: MyString
+  cost: 9.99

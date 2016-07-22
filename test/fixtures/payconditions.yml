@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: MyString
+  yearmonth: 2016-07-22
+  ispay: false
+  islive: false
+
+two:
+  username: MyString
+  yearmonth: 2016-07-22
+  ispay: false
+  islive: false
