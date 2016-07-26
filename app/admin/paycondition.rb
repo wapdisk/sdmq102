@@ -1,5 +1,10 @@
 ActiveAdmin.register Paycondition do
+  menu priority: 5, label:  I18n.t("active_admin.paycondition")
   permit_params :username,:yearmonth, :ispay,:islive
+
+  controller do
+    before_filter { @page_title = I18n.t("active_admin.paycondition") }
+  end
 
   index do
     selectable_column

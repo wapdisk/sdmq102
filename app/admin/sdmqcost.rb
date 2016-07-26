@@ -1,5 +1,10 @@
 ActiveAdmin.register Sdmqcost do
+  menu priority: 2, label:  I18n.t("active_admin.sdmqcost") 
   permit_params :yearmonth,:costtype, :cost
+
+        controller do
+      before_filter { @page_title = I18n.t("active_admin.sdmqcost") }
+    end
 
   index do
     selectable_column

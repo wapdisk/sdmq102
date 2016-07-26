@@ -1,5 +1,10 @@
 ActiveAdmin.register Notice do
+  menu priority: 6, label:  I18n.t("active_admin.notice") 
   permit_params :username,:title, :body
+
+    controller do
+      before_filter { @page_title = I18n.t("active_admin.notice") }
+    end
 
   index do
     selectable_column

@@ -1,5 +1,10 @@
 ActiveAdmin.register Accountquery do
+  menu priority: 4, label:  I18n.t("active_admin.accountquery") 
   permit_params :account,:accounttype, :query_url
+
+      controller do
+      before_filter { @page_title = I18n.t("active_admin.accountquery") }
+    end
 
   index do
     selectable_column
