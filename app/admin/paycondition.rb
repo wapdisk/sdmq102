@@ -1,17 +1,34 @@
 ActiveAdmin.register Paycondition do
+  permit_params :username,:yearmonth, :ispay,:islive
 
-# See permitted parameters documentation:
-# https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-#
-# permit_params :list, :of, :attributes, :on, :model
-#
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if params[:action] == 'create' && current_user.admin?
-#   permitted
-# end
+  index do
+    selectable_column
+    id_column
+    column "Username" do |u|
+      usr = AdminUser.find(u.username).username
+    end
+    column :yearmonth
+    column :ispay
+    column :islive
+    column :created_at
+    actions
+  end
 
+  filter :username
+  filter :yearmonth
+  filter :ispay
+  filter :islive
+  filter :created_at
+
+  form do |f|
+    f.inputs "Paycondition Details" do
+      f.input :username, :as => :select,      :collection => AdminUser.all, include_blank: false
+      f.input :yearmonth, :as => :datepicker
+      f.input :ispay
+      f.input :islive
+    end
+    f.actions
+  end
 
 end
+

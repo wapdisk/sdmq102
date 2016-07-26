@@ -6,7 +6,9 @@ ActiveAdmin.register Accountquery do
     id_column
     column :account
     column :accounttype
-    column :query_url
+    column :query_url  do |post|
+      link_to post.query_url, post.query_url
+    end
     actions
   end
 

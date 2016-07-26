@@ -7,6 +7,7 @@ ActiveAdmin.register Notice do
     column :username
     column :title
     column :body
+    column :created_at
     actions
   end
 
@@ -17,7 +18,7 @@ ActiveAdmin.register Notice do
 
   form do |f|
     f.inputs "Notice Details" do
-      f.input :username
+      f.input :username, :input_html => { :value => current_admin_user.username ,:readonly => true}
       f.input :title
       f.input :body
     end
