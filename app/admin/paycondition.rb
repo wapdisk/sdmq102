@@ -1,5 +1,5 @@
 ActiveAdmin.register Paycondition do
-  menu priority: 5, label:  I18n.t("active_admin.paycondition")
+  menu priority: 5, label: proc{ I18n.t("active_admin.paycondition")}
   permit_params :username,:yearmonth, :ispay,:islive
 
   controller do
@@ -9,7 +9,7 @@ ActiveAdmin.register Paycondition do
   index do
     selectable_column
     id_column
-    column "Username" do |u|
+    column :username do |u|
       usr = AdminUser.find(u.username).username
     end
     column :yearmonth
@@ -26,6 +26,7 @@ ActiveAdmin.register Paycondition do
   filter :created_at
 
   form do |f|
+    f.semantic_errors
     f.inputs "Paycondition Details" do
       f.input :username, :as => :select,      :collection => AdminUser.all, include_blank: false
       f.input :yearmonth, :as => :datepicker
@@ -34,6 +35,13 @@ ActiveAdmin.register Paycondition do
     end
     f.actions
   end
+
+  sidebar :help do
+  ul do
+    li "联系电话：15721552663"
+    li "邮箱：924211739@qq.com"
+  end
+end
 
 end
 

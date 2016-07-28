@@ -4,7 +4,7 @@ ActiveAdmin.setup do |config|
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = "Sdmq102"
+  config.site_title = "宿舍水电煤气费用结算系统V1.0"
 
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
@@ -48,10 +48,8 @@ ActiveAdmin.setup do |config|
         lang.add :label => "中文",:url => proc { url_for(:locale => 'zh-CN') }, id: 'i18n-zh-CN', :priority => 1
         lang.add :label => "English",:url => proc { url_for(:locale => 'en') }, id: 'i18n-en', :priority => 2
       end
-      menu.add :label => proc { display_name current_active_admin_user },
-                :url => '#',
-                :id => 'current_user',
-                :if => proc { current_active_admin_user? }
+      
+      admin.add_current_user_to_menu  menu
       admin.add_logout_button_to_menu menu
     end
   end
@@ -75,6 +73,7 @@ ActiveAdmin.setup do |config|
   # ensure that there is a user with proper rights. You can use
   # CanCanAdapter or make your own. Please refer to documentation.
   # config.authorization_adapter = ActiveAdmin::CanCanAdapter
+  # config.authorization_adapter = ActiveAdmin::PunditAdapter
 
   # In case you prefer Pundit over other solutions you can here pass
   # the name of default policy class. This policy will be used in every
