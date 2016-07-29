@@ -1,10 +1,10 @@
 ActiveAdmin.register Notice do
-  menu priority: 6, label: proc{ I18n.t("active_admin.notice") }
+  menu priority: 7, label: proc{ t("active_admin.notice") }
   permit_params :username,:title, :body
 
-    controller do
-      before_filter { @page_title = I18n.t("active_admin.notice") }
-    end
+  controller do
+    before_filter { @page_title = t("active_admin.notice") }
+  end
 
   index do
     selectable_column
@@ -23,7 +23,7 @@ ActiveAdmin.register Notice do
 
   form do |f|
     f.semantic_errors
-    f.inputs "Notice Details" do
+    f.inputs t("active_admin.sdmqcost")+t("active_admin.details") do
       f.input :username, :input_html => { :value => current_admin_user.username ,:readonly => true}
       f.input :title
       f.input :body
@@ -31,12 +31,12 @@ ActiveAdmin.register Notice do
     f.actions
   end
 
-sidebar :help do
-  ul do
-    li "联系电话：15721552663"
-    li "邮箱：924211739@qq.com"
+  sidebar :help do
+    ul do
+      li t("help_mobilephone")
+      li t("help_email")
+    end
   end
-end
 
 end
 

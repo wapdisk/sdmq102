@@ -34,6 +34,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use activeadmin
 gem 'activeadmin', '~> 1.0.0.pre4'
+# Use active_admin_theme
+gem 'active_admin_theme', '~> 1.0', '>= 1.0.3'
 # Use devise
 gem 'devise', '~> 4.2'
 # Use pundit
