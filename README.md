@@ -1,5 +1,5 @@
 # sdmq102
-<img src="http://7xtlfa.com1.z0.glb.clouddn.com/static/images/sdmq02.png?imageView2/2/w/800/h/600/q/100/format/png" width="800" height="400" />
+<img src="http://7xtlfa.com1.z0.glb.clouddn.com/static/images/sdmq02.png?imageView2/2/w/2560/h/1600/q/100/format/png" width="800" height="600" />
 
 ## Installation
 1. ```bundle install```
